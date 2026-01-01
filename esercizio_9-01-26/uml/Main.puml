@@ -1,0 +1,53 @@
+@startuml Main.caption 
+!theme spacelab
+
+class Parcheggio {
+    +void ingresso()
+    +void uscita()
+}
+
+class Veicolo {
+    -String targa
+    -String marca
+    -String orarioIngresso
+    --
+    +Veicolo(String targa, String marca, String orarioIngresso)
+    --
+    +String getTarga()
+    +String getMarca()
+    +String getOrarioIngresso()
+    +void setTarga()
+    +void setMarca()
+    +void setOrarioIngresso()
+}
+
+class Automobile extends Veicolo {
+    -Integer numeroPosti
+    -Integer cilindrata
+    --
+    +Automobile(Integer numeroPosti, Integer cilindrata)
+    --
+    +Integer getNumeroPosti()
+    +Integer getCilindrata()
+    +void setNumeroPosti(Integer numeroPosti)
+    +void setCilindrata(Integer cilindrata)
+}
+
+class Motociclo extends Veicolo {
+    -Integer numeroPosti
+    -Integer cilindrata
+    --
+    +Motociclo(Integer numeroPosti, Integer cilindrata)
+    --
+    +Integer getNumeroPosti
+    +Integer getCilindrata()
+    +void setNumeroPosti()
+    +void setCilindrata()
+}
+
+Parcheggio<..Veicolo
+Parcheggio<..Automobile
+Parcheggio<..Motociclo
+
+
+@enduml
